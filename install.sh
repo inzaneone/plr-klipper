@@ -10,7 +10,7 @@ OWNER=""
 if [ -n "$SUDO_USER" ]; then
     echo "shell script execute by with sudo :  user is $SUDO_USER"
     if [ "$SUDO_USER" = "runner" ]; then
-        # Définir USER_HOME spécifiquement pour 'runner' et définir OWNER à 'pi'
+        # Définir USER_HOME spécifiquement pour 'runner' et définir OWNER à 'agile'
         USER_HOME="/home/agile"
         OWNER="agile"
     else
@@ -84,10 +84,10 @@ else
       mv "$temp_file" $USER_HOME/printer_data/config/printer.cfg
 
       # Check if the string was added successfully
-      if grep -q '[include plr.cfg]' $USER_HOME/printer_data/config/printer.cfg; then
-          echo "The string [include plr.cfg] was successfully added."
+      if grep -q '[include .cfg]' $USER_HOME/printer_data/config/printer.cfg; then
+          echo "The string [include .cfg] was successfully added."
       else
-          echo "Error: the string [include plr.cfg] was not added."
+          echo "Error: the string [include .cfg] was not added."
       fi
   fi
 
@@ -139,10 +139,10 @@ else
   echo "Creating a new update_plr.cfg file with cat EOF..."
   cat > $USER_HOME/printer_data/config/update_plr.cfg << EOF
 # plr-klipper update_manager entry
-[update_manager YUMI_PLR]
+[update_manager plr]
 type: git_repo
-path: ~/YUMI_PLR
-origin: https://github.com/Yumi-Lab/YUMI_PLR.git
+path: ~/plr
+origin: https://github.com/inzaneone/plr-klipper.git
 primary_branch: main
 install_script: install.sh
 is_system_service: False

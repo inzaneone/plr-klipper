@@ -51,13 +51,13 @@ else
   fi
 
   # Copy the project files to the Klipper directory
-  cp -f $PROJECT_DIR/plr.cfg $USER_HOME/printer_data/config/ && echo "plr.cfg copied successfully." || echo "Error copying plr.cfg."
+  cp -f $PROJECT_DIR/.cfg $USER_HOME/printer_data/config/ && echo "plr.cfg copied successfully." || echo "Error copying plr.cfg."
   cp -f $PROJECT_DIR/gcode_shell_command.py $KLIPPER_DIR/klippy/extras/ && echo "gcode_shell_command.py copied successfully." || echo "Error copying gcode_shell_command.py."
   # Use rsync to copy, overwriting existing files and create the folder if it does not exist
   
   # Make plr.sh & clear_plr.sh executable
-  #chmod +x $USER_HOME/printer_data/plr/plr.sh && echo "plr.sh made executable." || echo "Error making plr.sh executable."
-  #chmod +x $USER_HOME/printer_data/plr/clear_plr.sh && echo "clear_plr.sh made executable." || echo "Error making clear_plr.sh executable."
+  #chmod +x $USER_HOME/printer_data/plr-klipper/plr.sh && echo "plr.sh made executable." || echo "Error making plr.sh executable."
+  #chmod +x $USER_HOME/printer_data/plr-klipper/clear_plr.sh && echo "clear_plr.sh made executable." || echo "Error making clear_plr.sh executable."
 
   # Check if printer.cfg exists, create it if it doesn't
   if [ ! -f $USER_HOME/printer_data/config/printer.cfg ]; then
@@ -141,7 +141,7 @@ else
 # plr-klipper update_manager entry
 [update_manager plr]
 type: git_repo
-path: ~/plr
+path: ~/plr-klipper
 origin: https://github.com/inzaneone/plr-klipper.git
 primary_branch: main
 install_script: install.sh

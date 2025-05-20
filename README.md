@@ -12,7 +12,7 @@ You must have created your Klipper installation with the user 'pi'; the script d
 1. Clone the YUMI_PLR Klipper repository from GitHub to your local machine:
 ```bash
 git clone https://github.com/inzaneone/plr-klipper.git
-cd agile_PLR
+cd plr
 ./install.sh
 ```
 

@@ -55,9 +55,9 @@ else
   cp -f $PROJECT_DIR/gcode_shell_command.py $KLIPPER_DIR/klippy/extras/ && echo "gcode_shell_command.py copied successfully." || echo "Error copying gcode_shell_command.py."
   # Use rsync to copy, overwriting existing files and create the folder if it does not exist
   
-  # Make plr.sh & clear_plr.sh executable
-  #chmod +x $USER_HOME/printer_data/plr-klipper/plr.sh && echo "plr.sh made executable." || echo "Error making plr.sh executable."
-  #chmod +x $USER_HOME/printer_data/plr-klipper/clear_plr.sh && echo "clear_plr.sh made executable." || echo "Error making clear_plr.sh executable."
+   Make plr.sh & clear_plr.sh executable
+  chmod +x $USER_HOME/plr-klipper/plr.sh && echo "plr.sh made executable." || echo "Error making plr.sh executable."
+  chmod +x $USER_HOME/plr-klipper/clear_plr.sh && echo "clear_plr.sh made executable." || echo "Error making clear_plr.sh executable."
 
   # Check if printer.cfg exists, create it if it doesn't
   if [ ! -f $USER_HOME/printer_data/config/printer.cfg ]; then

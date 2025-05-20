@@ -3,7 +3,7 @@
 1. Clone the powerloss recovery Klipper repository from GitHub to your local machine:
 ```bash
 git clone https://github.com/inzaneone/plr-klipper.git
-cd plr
+cd plr-klipper
 ./install.sh
 ```
 
